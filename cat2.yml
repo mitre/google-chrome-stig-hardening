@@ -1,115 +1,76 @@
 ---
-- name: "MEDIUM | V-221558 | AUDIT | Firewall traversal from remote host must be disabled."
-  command: true
-  register: result
-  always_run: yes
-  changed_when: no
-  ignore_errors: yes
-  tags:
-    - cat2
-    - medium
-    - V-221558
-    - audit
 
 - name: "MEDIUM | V-221558 | PATCH | Firewall traversal from remote host must be disabled."
-  command: true
+  win_regedit:
+      path: HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome
+      value: RemoteAccessHostFirewallTraversal
+      data: 0
+      type: dword
+  when:
+      - DTBC-0001
   tags:
+    - DTBC-0001
     - cat2
-    - medium
+    - CCI-001414
+    - SRG-APP-000039
+    - SV-221558r769351_rule
     - V-221558
-    - patch
-
-- name: "MEDIUM | V-221559 | AUDIT | Site tracking users location must be disabled."
-  command: true
-  register: result
-  always_run: yes
-  changed_when: no
-  ignore_errors: yes
-  tags:
-    - cat2
-    - medium
-    - V-221559
-    - audit
 
 - name: "MEDIUM | V-221559 | PATCH | Site tracking users location must be disabled."
-  command: true
+  win_regedit:
+      path: HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome
+      value: DefaultGeolocationSetting
+      data: 2
+      type: dword
+  when:
+      - DTBC-0002
   tags:
     - cat2
     - medium
     - V-221559
     - patch
 
-- name: "MEDIUM | V-221561 | AUDIT | Sites ability to show pop-ups must be disabled."
-  command: true
-  register: result
-  always_run: yes
-  changed_when: no
-  ignore_errors: yes
-  tags:
-    - cat2
-    - medium
-    - V-221561
-    - audit
-
 - name: "MEDIUM | V-221561 | PATCH | Sites ability to show pop-ups must be disabled."
-  command: true
+  win_regedit:
+      path: HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome
+      value: DefaultPopupsSetting
+      data: 2
+      type: dword
+  when:
+      - DTBC-0004
   tags:
     - cat2
     - medium
     - V-221561
-    - patch
-
-- name: "MEDIUM | V-221562 | AUDIT | Extensions installation must be blocklisted by default."
-  command: true
-  register: result
-  always_run: yes
-  changed_when: no
-  ignore_errors: yes
-  tags:
-    - cat2
-    - medium
-    - V-221562
-    - audit
+    - patch  
 
 - name: "MEDIUM | V-221562 | PATCH | Extensions installation must be blocklisted by default."
-  command: true
+  win_regedit:
+      path: HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome\ExtensionInstallBlocklist
+      value: 1
+      data: *
+      type: dword
+  when:
+      - DTBC-0005
   tags:
     - cat2
     - medium
     - V-221562
     - patch
 
-- name: "MEDIUM | V-221563 | AUDIT | Extensions that are approved for use must be allowlisted."
-  command: true
-  register: result
-  always_run: yes
-  changed_when: no
-  ignore_errors: yes
-  tags:
-    - cat2
-    - medium
-    - V-221563
-    - audit
-
 - name: "MEDIUM | V-221563 | PATCH | Extensions that are approved for use must be allowlisted."
-  command: true
+  win_regedit:
+      path: HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome\ExtensionInstallAllowlist
+      value: 1
+      data: '1 and oiigbmnaadbkfbmpbfijlflahbdbdgdf '
+      type: dword
+  when:
+      - DTBC-0006
   tags:
     - cat2
     - medium
     - V-221563
     - patch
-
-- name: "MEDIUM | V-221564 | AUDIT | The default search providers name must be set."
-  command: true
-  register: result
-  always_run: yes
-  changed_when: no
-  ignore_errors: yes
-  tags:
-    - cat2
-    - medium
-    - V-221564
-    - audit
 
 - name: "MEDIUM | V-221564 | PATCH | The default search providers name must be set."
   command: true
@@ -118,18 +79,6 @@
     - medium
     - V-221564
     - patch
-
-- name: "MEDIUM | V-221565 | AUDIT | The default search provider URL must be set to perform encrypted searches."
-  command: true
-  register: result
-  always_run: yes
-  changed_when: no
-  ignore_errors: yes
-  tags:
-    - cat2
-    - medium
-    - V-221565
-    - audit
 
 - name: "MEDIUM | V-221565 | PATCH | The default search provider URL must be set to perform encrypted searches."
   command: true
