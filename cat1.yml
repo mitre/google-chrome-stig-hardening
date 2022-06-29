@@ -1,0 +1,21 @@
+---
+- name: "HIGH | V-234701 | AUDIT | Chrome must be configured to allow only TLS."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat1
+    - high
+    - V-234701
+    - audit
+
+- name: "HIGH | V-234701 | PATCH | Chrome must be configured to allow only TLS."
+  command: true
+  tags:
+    - cat1
+    - high
+    - V-234701
+    - patch
+

@@ -1,0 +1,821 @@
+---
+- name: "MEDIUM | V-221558 | AUDIT | Firewall traversal from remote host must be disabled."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat2
+    - medium
+    - V-221558
+    - audit
+
+- name: "MEDIUM | V-221558 | PATCH | Firewall traversal from remote host must be disabled."
+  command: true
+  tags:
+    - cat2
+    - medium
+    - V-221558
+    - patch
+
+- name: "MEDIUM | V-221559 | AUDIT | Site tracking users location must be disabled."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat2
+    - medium
+    - V-221559
+    - audit
+
+- name: "MEDIUM | V-221559 | PATCH | Site tracking users location must be disabled."
+  command: true
+  tags:
+    - cat2
+    - medium
+    - V-221559
+    - patch
+
+- name: "MEDIUM | V-221561 | AUDIT | Sites ability to show pop-ups must be disabled."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat2
+    - medium
+    - V-221561
+    - audit
+
+- name: "MEDIUM | V-221561 | PATCH | Sites ability to show pop-ups must be disabled."
+  command: true
+  tags:
+    - cat2
+    - medium
+    - V-221561
+    - patch
+
+- name: "MEDIUM | V-221562 | AUDIT | Extensions installation must be blocklisted by default."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat2
+    - medium
+    - V-221562
+    - audit
+
+- name: "MEDIUM | V-221562 | PATCH | Extensions installation must be blocklisted by default."
+  command: true
+  tags:
+    - cat2
+    - medium
+    - V-221562
+    - patch
+
+- name: "MEDIUM | V-221563 | AUDIT | Extensions that are approved for use must be allowlisted."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat2
+    - medium
+    - V-221563
+    - audit
+
+- name: "MEDIUM | V-221563 | PATCH | Extensions that are approved for use must be allowlisted."
+  command: true
+  tags:
+    - cat2
+    - medium
+    - V-221563
+    - patch
+
+- name: "MEDIUM | V-221564 | AUDIT | The default search providers name must be set."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat2
+    - medium
+    - V-221564
+    - audit
+
+- name: "MEDIUM | V-221564 | PATCH | The default search providers name must be set."
+  command: true
+  tags:
+    - cat2
+    - medium
+    - V-221564
+    - patch
+
+- name: "MEDIUM | V-221565 | AUDIT | The default search provider URL must be set to perform encrypted searches."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat2
+    - medium
+    - V-221565
+    - audit
+
+- name: "MEDIUM | V-221565 | PATCH | The default search provider URL must be set to perform encrypted searches."
+  command: true
+  tags:
+    - cat2
+    - medium
+    - V-221565
+    - patch
+
+- name: "MEDIUM | V-221566 | AUDIT | Default search provider must be enabled."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat2
+    - medium
+    - V-221566
+    - audit
+
+- name: "MEDIUM | V-221566 | PATCH | Default search provider must be enabled."
+  command: true
+  tags:
+    - cat2
+    - medium
+    - V-221566
+    - patch
+
+- name: "MEDIUM | V-221567 | AUDIT | The Password Manager must be disabled."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat2
+    - medium
+    - V-221567
+    - audit
+
+- name: "MEDIUM | V-221567 | PATCH | The Password Manager must be disabled."
+  command: true
+  tags:
+    - cat2
+    - medium
+    - V-221567
+    - patch
+
+- name: "MEDIUM | V-221570 | AUDIT | Background processing must be disabled."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat2
+    - medium
+    - V-221570
+    - audit
+
+- name: "MEDIUM | V-221570 | PATCH | Background processing must be disabled."
+  command: true
+  tags:
+    - cat2
+    - medium
+    - V-221570
+    - patch
+
+- name: "MEDIUM | V-221571 | AUDIT | Google Data Synchronization must be disabled."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat2
+    - medium
+    - V-221571
+    - audit
+
+- name: "MEDIUM | V-221571 | PATCH | Google Data Synchronization must be disabled."
+  command: true
+  tags:
+    - cat2
+    - medium
+    - V-221571
+    - patch
+
+- name: "MEDIUM | V-221572 | AUDIT | The URL protocol schema javascript must be disabled."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat2
+    - medium
+    - V-221572
+    - audit
+
+- name: "MEDIUM | V-221572 | PATCH | The URL protocol schema javascript must be disabled."
+  command: true
+  tags:
+    - cat2
+    - medium
+    - V-221572
+    - patch
+
+- name: "MEDIUM | V-221573 | AUDIT | Cloud print sharing must be disabled."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat2
+    - medium
+    - V-221573
+    - audit
+
+- name: "MEDIUM | V-221573 | PATCH | Cloud print sharing must be disabled."
+  command: true
+  tags:
+    - cat2
+    - medium
+    - V-221573
+    - patch
+
+- name: "MEDIUM | V-221574 | AUDIT | Network prediction must be disabled."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat2
+    - medium
+    - V-221574
+    - audit
+
+- name: "MEDIUM | V-221574 | PATCH | Network prediction must be disabled."
+  command: true
+  tags:
+    - cat2
+    - medium
+    - V-221574
+    - patch
+
+- name: "MEDIUM | V-221575 | AUDIT | Metrics reporting to Google must be disabled."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat2
+    - medium
+    - V-221575
+    - audit
+
+- name: "MEDIUM | V-221575 | PATCH | Metrics reporting to Google must be disabled."
+  command: true
+  tags:
+    - cat2
+    - medium
+    - V-221575
+    - patch
+
+- name: "MEDIUM | V-221576 | AUDIT | Search suggestions must be disabled."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat2
+    - medium
+    - V-221576
+    - audit
+
+- name: "MEDIUM | V-221576 | PATCH | Search suggestions must be disabled."
+  command: true
+  tags:
+    - cat2
+    - medium
+    - V-221576
+    - patch
+
+- name: "MEDIUM | V-221577 | AUDIT | Importing of saved passwords must be disabled."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat2
+    - medium
+    - V-221577
+    - audit
+
+- name: "MEDIUM | V-221577 | PATCH | Importing of saved passwords must be disabled."
+  command: true
+  tags:
+    - cat2
+    - medium
+    - V-221577
+    - patch
+
+- name: "MEDIUM | V-221578 | AUDIT | Incognito mode must be disabled."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat2
+    - medium
+    - V-221578
+    - audit
+
+- name: "MEDIUM | V-221578 | PATCH | Incognito mode must be disabled."
+  command: true
+  tags:
+    - cat2
+    - medium
+    - V-221578
+    - patch
+
+- name: "MEDIUM | V-221579 | AUDIT | Online revocation checks must be performed."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat2
+    - medium
+    - V-221579
+    - audit
+
+- name: "MEDIUM | V-221579 | PATCH | Online revocation checks must be performed."
+  command: true
+  tags:
+    - cat2
+    - medium
+    - V-221579
+    - patch
+
+- name: "MEDIUM | V-221580 | AUDIT | Safe Browsing must be enabled,"
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat2
+    - medium
+    - V-221580
+    - audit
+
+- name: "MEDIUM | V-221580 | PATCH | Safe Browsing must be enabled,"
+  command: true
+  tags:
+    - cat2
+    - medium
+    - V-221580
+    - patch
+
+- name: "MEDIUM | V-221581 | AUDIT | Browser history must be saved."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat2
+    - medium
+    - V-221581
+    - audit
+
+- name: "MEDIUM | V-221581 | PATCH | Browser history must be saved."
+  command: true
+  tags:
+    - cat2
+    - medium
+    - V-221581
+    - patch
+
+- name: "MEDIUM | V-221584 | AUDIT | The version of Google Chrome running on the system must be a supported version."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat2
+    - medium
+    - V-221584
+    - audit
+
+- name: "MEDIUM | V-221584 | PATCH | The version of Google Chrome running on the system must be a supported version."
+  command: true
+  tags:
+    - cat2
+    - medium
+    - V-221584
+    - patch
+
+- name: "MEDIUM | V-221586 | AUDIT | Deletion of browser history must be disabled."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat2
+    - medium
+    - V-221586
+    - audit
+
+- name: "MEDIUM | V-221586 | PATCH | Deletion of browser history must be disabled."
+  command: true
+  tags:
+    - cat2
+    - medium
+    - V-221586
+    - patch
+
+- name: "MEDIUM | V-221587 | AUDIT | Prompt for download location must be enabled."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat2
+    - medium
+    - V-221587
+    - audit
+
+- name: "MEDIUM | V-221587 | PATCH | Prompt for download location must be enabled."
+  command: true
+  tags:
+    - cat2
+    - medium
+    - V-221587
+    - patch
+
+- name: "MEDIUM | V-221588 | AUDIT | Download restrictions must be configured."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat2
+    - medium
+    - V-221588
+    - audit
+
+- name: "MEDIUM | V-221588 | PATCH | Download restrictions must be configured."
+  command: true
+  tags:
+    - cat2
+    - medium
+    - V-221588
+    - patch
+
+- name: "MEDIUM | V-221590 | AUDIT | Safe Browsing Extended Reporting must be disabled."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat2
+    - medium
+    - V-221590
+    - audit
+
+- name: "MEDIUM | V-221590 | PATCH | Safe Browsing Extended Reporting must be disabled."
+  command: true
+  tags:
+    - cat2
+    - medium
+    - V-221590
+    - patch
+
+- name: "MEDIUM | V-221591 | AUDIT | WebUSB must be disabled."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat2
+    - medium
+    - V-221591
+    - audit
+
+- name: "MEDIUM | V-221591 | PATCH | WebUSB must be disabled."
+  command: true
+  tags:
+    - cat2
+    - medium
+    - V-221591
+    - patch
+
+- name: "MEDIUM | V-221592 | AUDIT | Chrome Cleanup must be disabled."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat2
+    - medium
+    - V-221592
+    - audit
+
+- name: "MEDIUM | V-221592 | PATCH | Chrome Cleanup must be disabled."
+  command: true
+  tags:
+    - cat2
+    - medium
+    - V-221592
+    - patch
+
+- name: "MEDIUM | V-221593 | AUDIT | Chrome Cleanup reporting must be disabled."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat2
+    - medium
+    - V-221593
+    - audit
+
+- name: "MEDIUM | V-221593 | PATCH | Chrome Cleanup reporting must be disabled."
+  command: true
+  tags:
+    - cat2
+    - medium
+    - V-221593
+    - patch
+
+- name: "MEDIUM | V-221594 | AUDIT | Google Cast must be disabled."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat2
+    - medium
+    - V-221594
+    - audit
+
+- name: "MEDIUM | V-221594 | PATCH | Google Cast must be disabled."
+  command: true
+  tags:
+    - cat2
+    - medium
+    - V-221594
+    - patch
+
+- name: "MEDIUM | V-221595 | AUDIT | Autoplay must be disabled."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat2
+    - medium
+    - V-221595
+    - audit
+
+- name: "MEDIUM | V-221595 | PATCH | Autoplay must be disabled."
+  command: true
+  tags:
+    - cat2
+    - medium
+    - V-221595
+    - patch
+
+- name: "MEDIUM | V-221596 | AUDIT | URLs must be allowlisted for Autoplay use."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat2
+    - medium
+    - V-221596
+    - audit
+
+- name: "MEDIUM | V-221596 | PATCH | URLs must be allowlisted for Autoplay use."
+  command: true
+  tags:
+    - cat2
+    - medium
+    - V-221596
+    - patch
+
+- name: "MEDIUM | V-221597 | AUDIT | Anonymized data collection must be disabled."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat2
+    - medium
+    - V-221597
+    - audit
+
+- name: "MEDIUM | V-221597 | PATCH | Anonymized data collection must be disabled."
+  command: true
+  tags:
+    - cat2
+    - medium
+    - V-221597
+    - patch
+
+- name: "MEDIUM | V-221598 | AUDIT | Collection of WebRTC event logs must be disabled."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat2
+    - medium
+    - V-221598
+    - audit
+
+- name: "MEDIUM | V-221598 | PATCH | Collection of WebRTC event logs must be disabled."
+  command: true
+  tags:
+    - cat2
+    - medium
+    - V-221598
+    - patch
+
+- name: "MEDIUM | V-226401 | AUDIT | Guest Mode must be disabled."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat2
+    - medium
+    - V-226401
+    - audit
+
+- name: "MEDIUM | V-226401 | PATCH | Guest Mode must be disabled."
+  command: true
+  tags:
+    - cat2
+    - medium
+    - V-226401
+    - patch
+
+- name: "MEDIUM | V-226402 | AUDIT | AutoFill for credit cards must be disabled."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat2
+    - medium
+    - V-226402
+    - audit
+
+- name: "MEDIUM | V-226402 | PATCH | AutoFill for credit cards must be disabled."
+  command: true
+  tags:
+    - cat2
+    - medium
+    - V-226402
+    - patch
+
+- name: "MEDIUM | V-226403 | AUDIT | AutoFill for addresses must be disabled."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat2
+    - medium
+    - V-226403
+    - audit
+
+- name: "MEDIUM | V-226403 | PATCH | AutoFill for addresses must be disabled."
+  command: true
+  tags:
+    - cat2
+    - medium
+    - V-226403
+    - patch
+
+- name: "MEDIUM | V-226404 | AUDIT | Import AutoFill form data must be disabled."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat2
+    - medium
+    - V-226404
+    - audit
+
+- name: "MEDIUM | V-226404 | PATCH | Import AutoFill form data must be disabled."
+  command: true
+  tags:
+    - cat2
+    - medium
+    - V-226404
+    - patch
+
+- name: "MEDIUM | V-241787 | AUDIT | Web Bluetooth API must be disabled."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat2
+    - medium
+    - V-241787
+    - audit
+
+- name: "MEDIUM | V-241787 | PATCH | Web Bluetooth API must be disabled."
+  command: true
+  tags:
+    - cat2
+    - medium
+    - V-241787
+    - patch
+
+- name: "MEDIUM | V-245538 | AUDIT | Use of the QUIC protocol must be disabled."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat2
+    - medium
+    - V-245538
+    - audit
+
+- name: "MEDIUM | V-245538 | PATCH | Use of the QUIC protocol must be disabled."
+  command: true
+  tags:
+    - cat2
+    - medium
+    - V-245538
+    - patch
+
+- name: "MEDIUM | V-245539 | AUDIT | Session only based cookies must be disabled."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat2
+    - medium
+    - V-245539
+    - audit
+
+- name: "MEDIUM | V-245539 | PATCH | Session only based cookies must be disabled."
+  command: true
+  tags:
+    - cat2
+    - medium
+    - V-245539
+    - patch
+

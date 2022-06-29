@@ -1,0 +1,49 @@
+
+high
+V-234701 - high - Chrome must be configured to allow only TLS.
+
+medium
+V-221558 - medium - Firewall traversal from remote host must be disabled.
+V-221559 - medium - Site tracking users location must be disabled.
+V-221561 - medium - Sites ability to show pop-ups must be disabled.
+V-221562 - medium - Extensions installation must be blocklisted by default.
+V-221563 - medium - Extensions that are approved for use must be allowlisted.
+V-221564 - medium - The default search providers name must be set.
+V-221565 - medium - The default search provider URL must be set to perform encrypted searches.
+V-221566 - medium - Default search provider must be enabled.
+V-221567 - medium - The Password Manager must be disabled.
+V-221570 - medium - Background processing must be disabled.
+V-221571 - medium - Google Data Synchronization must be disabled.
+V-221572 - medium - The URL protocol schema javascript must be disabled.
+V-221573 - medium - Cloud print sharing must be disabled.
+V-221574 - medium - Network prediction must be disabled.
+V-221575 - medium - Metrics reporting to Google must be disabled.
+V-221576 - medium - Search suggestions must be disabled.
+V-221577 - medium - Importing of saved passwords must be disabled.
+V-221578 - medium - Incognito mode must be disabled.
+V-221579 - medium - Online revocation checks must be performed.
+V-221580 - medium - Safe Browsing must be enabled,
+V-221581 - medium - Browser history must be saved.
+V-221584 - medium - The version of Google Chrome running on the system must be a supported version.
+V-221586 - medium - Deletion of browser history must be disabled.
+V-221587 - medium - Prompt for download location must be enabled.
+V-221588 - medium - Download restrictions must be configured.
+V-221590 - medium - Safe Browsing Extended Reporting must be disabled.
+V-221591 - medium - WebUSB must be disabled.
+V-221592 - medium - Chrome Cleanup must be disabled.
+V-221593 - medium - Chrome Cleanup reporting must be disabled.
+V-221594 - medium - Google Cast must be disabled.
+V-221595 - medium - Autoplay must be disabled.
+V-221596 - medium - URLs must be allowlisted for Autoplay use.
+V-221597 - medium - Anonymized data collection must be disabled.
+V-221598 - medium - Collection of WebRTC event logs must be disabled.
+V-226401 - medium - Guest Mode must be disabled.
+V-226402 - medium - AutoFill for credit cards must be disabled.
+V-226403 - medium - AutoFill for addresses must be disabled.
+V-226404 - medium - Import AutoFill form data must be disabled.
+V-241787 - medium - Web Bluetooth API must be disabled.
+V-245538 - medium - Use of the QUIC protocol must be disabled.
+V-245539 - medium - Session only based cookies must be disabled.
+
+low
+V-221599 - low - Chrome development tools must be disabled.

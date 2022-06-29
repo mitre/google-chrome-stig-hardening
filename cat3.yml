@@ -1,0 +1,21 @@
+---
+- name: "LOW | V-221599 | AUDIT | Chrome development tools must be disabled."
+  command: true
+  register: result
+  always_run: yes
+  changed_when: no
+  ignore_errors: yes
+  tags:
+    - cat3
+    - low
+    - V-221599
+    - audit
+
+- name: "LOW | V-221599 | PATCH | Chrome development tools must be disabled."
+  command: true
+  tags:
+    - cat3
+    - low
+    - V-221599
+    - patch
+
