@@ -1,0 +1,64 @@
+---
+
+google_chrome_stig_cat1_patch: true
+google_chrome_stig_cat2_patch: true
+
+google_chrome_min_ansible_version: "2.6"
+
+# These variables correspond with the STIG IDs defined in the STIG and allows you to enable/disable specific rules.
+# PLEASE NOTE: These work in coordination with the cat1, cat2, cat3 group variables. You must enable an entire group
+# in order for the variables below to take effect.
+# CAT 1 Rules
+DTBC_0056: true
+
+# CAT 2 Rules
+DTBC_0001: true
+DTBC_0002: true
+DTBC_0004: true
+DTBC_0005: true
+DTBC_0006: true
+DTBC_0007: true
+DTBC_0008: true
+DTBC_0009: true
+DTBC_0011: true
+DTBC_0017: true
+DTBC_0020: true
+DTBC_0021: true
+DTBC_0023: true
+DTBC_0025: true
+DTBC_0026: true
+DTBC_0027: true
+DTBC_0029: true
+DTBC_0037: true
+DTBC_0038: true
+DTBC_0039: true
+DTBC_0050: true
+DTBC_0052: true
+DTBC_0053: true
+DTBC_0055: true
+DTBC_0057: true
+DTBC_0058: true
+DTBC_0060: true
+DTBC_0061: true
+DTBC_0063: true
+DTBC_0064: true
+DTBC_0065: true
+DTBC_0066: true
+DTBC_0067: true
+DTBC_0068: true
+DTBC_0069: true
+DTBC_0070: true
+DTBC_0071: true
+DTBC_0072: true
+DTBC_0073: true
+DTBC_0074: true
+DTBC_0045: true
+
+# Contains list of approved extension ids determined by administrators to decide which extensions should be allowed for their users
+google_chrome_approved_extension_ids: 1
+
+# This contains the name of organization approved encrypted search provider that corresponds to the encrypted search provider
+google_chrome_approved_search_provider: "bing"
+
+# This details an organization-approved encrypted search string to perform encrypted searches
+google_chrome_approved_search_string: "url"

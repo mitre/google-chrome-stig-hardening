@@ -7,7 +7,7 @@
       data: 0
       type: dword
   when:
-      - DTBC-0001
+      - DTBC_0001
   tags:
     - DTBC-0001
     - cat2
@@ -23,12 +23,13 @@
       data: 2
       type: dword
   when:
-      - DTBC-0002
+      - DTBC_0002
   tags:
     - cat2
-    - medium
+    - SRG-APP-000206
     - V-221559
-    - patch
+    - SV-221559r615937_rule
+    - DTBC-0002"
 
 - name: "MEDIUM | V-221561 | PATCH | Sites ability to show pop-ups must be disabled."
   win_regedit:
@@ -37,12 +38,13 @@
       data: 2
       type: dword
   when:
-      - DTBC-0004
+      - DTBC_0004
   tags:
     - cat2
-    - medium
+    - SRG-APP-000141
     - V-221561
-    - patch  
+    - SV-221561r615937_rule
+    - DTBC-0004 
 
 - name: "MEDIUM | V-221562 | PATCH | Extensions installation must be blocklisted by default."
   win_regedit:
@@ -51,114 +53,103 @@
       data: *
       type: dword
   when:
-      - DTBC-0005
+      - DTBC_0005
   tags:
     - cat2
-    - medium
+    - SRG-APP-000089
     - V-221562
-    - patch
+    - SV-221562r684815_rule
+    - DTBC-0005
 
 - name: "MEDIUM | V-221563 | PATCH | Extensions that are approved for use must be allowlisted."
   win_regedit:
       path: HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome\ExtensionInstallAllowlist
       value: 1
-      data: '1 and oiigbmnaadbkfbmpbfijlflahbdbdgdf '
+      data: "{{ google_chrome_approved_extension_ids }}"
       type: dword
   when:
-      - DTBC-0006
+      - DTBC_0006
   tags:
     - cat2
-    - medium
+    - SRG-APP-000210
     - V-221563
-    - patch
+    - SV-221563r684818_rule
+    - DTBC-0006
 
 - name: "MEDIUM | V-221564 | PATCH | The default search providers name must be set."
-  command: true
+  win_regedit:
+      path: HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome
+      value: DefaultSearchProviderName
+      data: "{{ google_chrome_approved_search_provider }}"
+      type: dword
+  when:
+    - DTBC_0007
   tags:
     - cat2
-    - medium
-    - V-221564
-    - patch
+    - SRG-APP-000141"
+  - V-221564"
+  - SV-221564r615937_rule"
+  - DTBC-0007"
 
 - name: "MEDIUM | V-221565 | PATCH | The default search provider URL must be set to perform encrypted searches."
-  command: true
+  win_regedit:
+      path: HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome
+      value: DefaultSearchProviderSearchURL
+      data: "{{ google_chrome_approved_search_string }}"
+      type: dword
+  when:
+    - DTBC_0008
   tags:
     - cat2
-    - medium
-    - V-221565
-    - patch
-
-- name: "MEDIUM | V-221566 | AUDIT | Default search provider must be enabled."
-  command: true
-  register: result
-  always_run: yes
-  changed_when: no
-  ignore_errors: yes
-  tags:
-    - cat2
-    - medium
-    - V-221566
-    - audit
+    -- SRG-APP-000141"
+  - V-221565"
+  - SV-221565r754421_rule"
+  - DTBC-0008"
 
 - name: "MEDIUM | V-221566 | PATCH | Default search provider must be enabled."
-  command: true
+  win_regedit:
+      path: HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome
+      value: DefaultSearchProviderEnabled
+      data: 1
+      type: dword
+  when:
+    - DTBC_0009
   tags:
     - cat2
-    - medium
+    - SRG-APP-000141
     - V-221566
-    - patch
-
-- name: "MEDIUM | V-221567 | AUDIT | The Password Manager must be disabled."
-  command: true
-  register: result
-  always_run: yes
-  changed_when: no
-  ignore_errors: yes
-  tags:
-    - cat2
-    - medium
-    - V-221567
-    - audit
+    - SV-221566r615937_rule
+    - DTBC-0009
 
 - name: "MEDIUM | V-221567 | PATCH | The Password Manager must be disabled."
-  command: true
+  win_regedit:
+      path: HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome
+      value: PasswordManagerEnabled
+      data: 0
+      type: dword
+  when:
+    - DTBC_0011
   tags:
     - cat2
-    - medium
+    - SRG-APP-000141
     - V-221567
-    - patch
-
-- name: "MEDIUM | V-221570 | AUDIT | Background processing must be disabled."
-  command: true
-  register: result
-  always_run: yes
-  changed_when: no
-  ignore_errors: yes
-  tags:
-    - cat2
-    - medium
-    - V-221570
-    - audit
+    - SV-221567r615937_rule
+    - DTBC-0011
 
 - name: "MEDIUM | V-221570 | PATCH | Background processing must be disabled."
-  command: true
+  win_regedit:
+      path: HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome
+      value: BackgroundModeEnabled
+      data: 0
+      type: dword
+  when:
+    - DTBC_0017
   tags:
     - cat2
-    - medium
+    - SRG-APP-000112
     - V-221570
-    - patch
-
-- name: "MEDIUM | V-221571 | AUDIT | Google Data Synchronization must be disabled."
-  command: true
-  register: result
-  always_run: yes
-  changed_when: no
-  ignore_errors: yes
-  tags:
-    - cat2
-    - medium
-    - V-221571
-    - audit
+    - SV-221570r615937_rule
+    - DTBC-0017
 
 - name: "MEDIUM | V-221571 | PATCH | Google Data Synchronization must be disabled."
   command: true
@@ -186,7 +177,7 @@
     - cat2
     - medium
     - V-221572
-    - patch
+    - patch  
 
 - name: "MEDIUM | V-221573 | AUDIT | Cloud print sharing must be disabled."
   command: true
