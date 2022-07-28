@@ -152,112 +152,88 @@
     - DTBC-0017
 
 - name: "MEDIUM | V-221571 | PATCH | Google Data Synchronization must be disabled."
-  command: true
+  win_regedit:
+      path: HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome
+      value: SyncDisabled
+      data: 1
+      type: dword
+  when:
+    - DTBC_0020
   tags:
     - cat2
-    - medium
+    - SRG-APP-000047
     - V-221571
-    - patch
-
-- name: "MEDIUM | V-221572 | AUDIT | The URL protocol schema javascript must be disabled."
-  command: true
-  register: result
-  always_run: yes
-  changed_when: no
-  ignore_errors: yes
-  tags:
-    - cat2
-    - medium
-    - V-221572
-    - audit
+    - SV-221571r615937_rule
+    - DTBC-0020
 
 - name: "MEDIUM | V-221572 | PATCH | The URL protocol schema javascript must be disabled."
-  command: true
+  win_regedit:
+      path: HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome\URLBlocklist
+      value: 1
+      data: javascript://*
+      type: dword
+  when:
+    - DTBC_0021
   tags:
     - cat2
-    - medium
+    - SRG-APP-000141
     - V-221572
-    - patch  
-
-- name: "MEDIUM | V-221573 | AUDIT | Cloud print sharing must be disabled."
-  command: true
-  register: result
-  always_run: yes
-  changed_when: no
-  ignore_errors: yes
-  tags:
-    - cat2
-    - medium
-    - V-221573
-    - audit
+    - SV-221572r754415_rule
+    - DTBC-0021
 
 - name: "MEDIUM | V-221573 | PATCH | Cloud print sharing must be disabled."
-  command: true
+  win_regedit:
+      path: HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome\
+      value: CloudPrintProxyEnabled
+      data: 0
+      type: dword
+  when:
+    - DTBC_0023
   tags:
     - cat2
-    - medium
+    - SRG-APP-000047
     - V-221573
-    - patch
-
-- name: "MEDIUM | V-221574 | AUDIT | Network prediction must be disabled."
-  command: true
-  register: result
-  always_run: yes
-  changed_when: no
-  ignore_errors: yes
-  tags:
-    - cat2
-    - medium
-    - V-221574
-    - audit
+    - SV-221573r769353_rule
+    - DTBC-0023
 
 - name: "MEDIUM | V-221574 | PATCH | Network prediction must be disabled."
-  command: true
+  win_regedit:
+      path: HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome\
+      value: '\"NetworkPredictionOptions\"'
+      data: '\"2,\"'
+      type: dword
+  when:
+    - DTBC_0025
   tags:
     - cat2
-    - medium
+    - SRG-APP-000516
     - V-221574
-    - patch
-
-- name: "MEDIUM | V-221575 | AUDIT | Metrics reporting to Google must be disabled."
-  command: true
-  register: result
-  always_run: yes
-  changed_when: no
-  ignore_errors: yes
-  tags:
-    - cat2
-    - medium
-    - V-221575
-    - audit
+    - SV-221574r615937_rule
+    - DTBC-0025
 
 - name: "MEDIUM | V-221575 | PATCH | Metrics reporting to Google must be disabled."
-  command: true
+  win_regedit:
+      path: HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome\
+      value: MetricsReportingEnabled
+      data: 0
+      type: dword
+  when:
+    - DTBC_0026
   tags:
     - cat2
-    - medium
+    - SRG-APP-000141
     - V-221575
-    - patch
-
-- name: "MEDIUM | V-221576 | AUDIT | Search suggestions must be disabled."
-  command: true
-  register: result
-  always_run: yes
-  changed_when: no
-  ignore_errors: yes
-  tags:
-    - cat2
-    - medium
-    - V-221576
-    - audit
+    - SV-221575r615937_rule
+    - DTBC-0026
 
 - name: "MEDIUM | V-221576 | PATCH | Search suggestions must be disabled."
   command: true
   tags:
     - cat2
-    - medium
+    - SRG-APP-000141
     - V-221576
-    - patch
+    - SV-221576r615937_rule
+    - DTBC-0027
 
 - name: "MEDIUM | V-221577 | AUDIT | Importing of saved passwords must be disabled."
   command: true
