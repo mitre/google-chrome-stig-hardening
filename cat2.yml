@@ -9,8 +9,8 @@
   when:
       - DTBC_0001
   tags:
-    - DTBC-0001
     - cat2
+    - DTBC-0001
     - CCI-001414
     - SRG-APP-000039
     - SV-221558r769351_rule
@@ -26,10 +26,11 @@
       - DTBC_0002
   tags:
     - cat2
+    - DTBC-0002
     - SRG-APP-000206
     - V-221559
     - SV-221559r615937_rule
-    - DTBC-0002"
+    - patch
 
 - name: "MEDIUM | V-221561 | PATCH | Sites ability to show pop-ups must be disabled."
   win_regedit:
@@ -45,12 +46,13 @@
     - V-221561
     - SV-221561r615937_rule
     - DTBC-0004 
+    - patch
 
 - name: "MEDIUM | V-221562 | PATCH | Extensions installation must be blocklisted by default."
   win_regedit:
       path: HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome\ExtensionInstallBlocklist
       value: 1
-      data: *
+      data: '*'
       type: dword
   when:
       - DTBC_0005
@@ -60,6 +62,7 @@
     - V-221562
     - SV-221562r684815_rule
     - DTBC-0005
+    - patch
 
 - name: "MEDIUM | V-221563 | PATCH | Extensions that are approved for use must be allowlisted."
   win_regedit:
@@ -75,6 +78,7 @@
     - V-221563
     - SV-221563r684818_rule
     - DTBC-0006
+    - patch
 
 - name: "MEDIUM | V-221564 | PATCH | The default search providers name must be set."
   win_regedit:
@@ -86,10 +90,10 @@
     - DTBC_0007
   tags:
     - cat2
-    - SRG-APP-000141"
-  - V-221564"
-  - SV-221564r615937_rule"
-  - DTBC-0007"
+    - SRG-APP-000141
+    - V-221564
+    - SV-221564r615937_rule
+    - DTBC-0007
 
 - name: "MEDIUM | V-221565 | PATCH | The default search provider URL must be set to perform encrypted searches."
   win_regedit:
@@ -101,10 +105,10 @@
     - DTBC_0008
   tags:
     - cat2
-    -- SRG-APP-000141"
-  - V-221565"
-  - SV-221565r754421_rule"
-  - DTBC-0008"
+    - SRG-APP-000141
+    - V-221565
+    - SV-221565r754421_rule
+    - DTBC-0008"
 
 - name: "MEDIUM | V-221566 | PATCH | Default search provider must be enabled."
   win_regedit:
@@ -120,6 +124,7 @@
     - V-221566
     - SV-221566r615937_rule
     - DTBC-0009
+    - patch
 
 - name: "MEDIUM | V-221567 | PATCH | The Password Manager must be disabled."
   win_regedit:
@@ -135,6 +140,7 @@
     - V-221567
     - SV-221567r615937_rule
     - DTBC-0011
+    - patch
 
 - name: "MEDIUM | V-221570 | PATCH | Background processing must be disabled."
   win_regedit:
@@ -150,6 +156,7 @@
     - V-221570
     - SV-221570r615937_rule
     - DTBC-0017
+    - patch
 
 - name: "MEDIUM | V-221571 | PATCH | Google Data Synchronization must be disabled."
   win_regedit:
@@ -165,6 +172,7 @@
     - V-221571
     - SV-221571r615937_rule
     - DTBC-0020
+    - patch
 
 - name: "MEDIUM | V-221572 | PATCH | The URL protocol schema javascript must be disabled."
   win_regedit:
@@ -180,10 +188,11 @@
     - V-221572
     - SV-221572r754415_rule
     - DTBC-0021
+    - patch
 
 - name: "MEDIUM | V-221573 | PATCH | Cloud print sharing must be disabled."
   win_regedit:
-      path: HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome\
+      path: HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome
       value: CloudPrintProxyEnabled
       data: 0
       type: dword
@@ -195,12 +204,13 @@
     - V-221573
     - SV-221573r769353_rule
     - DTBC-0023
+    - patch
 
 - name: "MEDIUM | V-221574 | PATCH | Network prediction must be disabled."
   win_regedit:
-      path: HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome\
-      value: '\"NetworkPredictionOptions\"'
-      data: '\"2,\"'
+      path: HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome
+      value: NetworkPredictionOptions
+      data: 2
       type: dword
   when:
     - DTBC_0025
@@ -210,10 +220,11 @@
     - V-221574
     - SV-221574r615937_rule
     - DTBC-0025
+    - patch
 
 - name: "MEDIUM | V-221575 | PATCH | Metrics reporting to Google must be disabled."
   win_regedit:
-      path: HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome\
+      path: HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome
       value: MetricsReportingEnabled
       data: 0
       type: dword
@@ -225,513 +236,332 @@
     - V-221575
     - SV-221575r615937_rule
     - DTBC-0026
+    - patch
 
 - name: "MEDIUM | V-221576 | PATCH | Search suggestions must be disabled."
-  command: true
+  win_regedit:
+      path: HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome
+      value: SearchSuggestEnabled
+      data: 0
+      type: dword
+  when:
+    - DTBC_0027
   tags:
     - cat2
     - SRG-APP-000141
     - V-221576
     - SV-221576r615937_rule
     - DTBC-0027
-
-- name: "MEDIUM | V-221577 | AUDIT | Importing of saved passwords must be disabled."
-  command: true
-  register: result
-  always_run: yes
-  changed_when: no
-  ignore_errors: yes
-  tags:
-    - cat2
-    - medium
-    - V-221577
-    - audit
+    - patch
 
 - name: "MEDIUM | V-221577 | PATCH | Importing of saved passwords must be disabled."
-  command: true
+  win_regedit:
+      path: HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome
+      value: ImportSavedPasswords
+      data: 0
+      type: dword
+  when:
+    - DTBC_0029
   tags:
     - cat2
-    - medium
-    - V-221577
+    - medium"
+     - SRG-APP-000141"
+      - V-221577"
+      - SV-221576r615937_rule"
+      - DTBC-0029"
     - patch
-
-- name: "MEDIUM | V-221578 | AUDIT | Incognito mode must be disabled."
-  command: true
-  register: result
-  always_run: yes
-  changed_when: no
-  ignore_errors: yes
-  tags:
-    - cat2
-    - medium
-    - V-221578
-    - audit
 
 - name: "MEDIUM | V-221578 | PATCH | Incognito mode must be disabled."
-  command: true
+  win_regedit:
+      path: HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome
+      value: IncognitoModeAvailability
+      data: 1
+      type: dword
+  when:
+    - DTBC_0030
   tags:
     - cat2
     - medium
+    - SRG-APP-000080
     - V-221578
+    - SV-221578r615937_rule
+    - DTBC-0030
     - patch
-
-- name: "MEDIUM | V-221579 | AUDIT | Online revocation checks must be performed."
-  command: true
-  register: result
-  always_run: yes
-  changed_when: no
-  ignore_errors: yes
-  tags:
-    - cat2
-    - medium
-    - V-221579
-    - audit
 
 - name: "MEDIUM | V-221579 | PATCH | Online revocation checks must be performed."
-  command: true
+  win_regedit:
+      path: HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome
+      value: EnableOnlineRevocationChecks
+      data: 1
+      type: dword
+  when:
+    - DTBC_0037
   tags:
     - cat2
     - medium
+    - SRG-APP-000605
     - V-221579
+    - SV-221579r769355_rule
+    - DTBC-0037
     - patch
-
-- name: "MEDIUM | V-221580 | AUDIT | Safe Browsing must be enabled,"
-  command: true
-  register: result
-  always_run: yes
-  changed_when: no
-  ignore_errors: yes
-  tags:
-    - cat2
-    - medium
-    - V-221580
-    - audit
 
 - name: "MEDIUM | V-221580 | PATCH | Safe Browsing must be enabled,"
-  command: true
+  win_regedit:
+      path: HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome
+      value: SafeBrowsingProtectionLevel
+      data: 1
+      type: dword
+  when:
+    - DTBC-0038
   tags:
     - cat2
     - medium
+    - SRG-APP-000206
     - V-221580
+    - SV-221580r684826_rule
+    - DTBC-0038
     - patch
-
-- name: "MEDIUM | V-221581 | AUDIT | Browser history must be saved."
-  command: true
-  register: result
-  always_run: yes
-  changed_when: no
-  ignore_errors: yes
-  tags:
-    - cat2
-    - medium
-    - V-221581
-    - audit
 
 - name: "MEDIUM | V-221581 | PATCH | Browser history must be saved."
-  command: true
+  win_regedit:
+      path: HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome
+      value: SavingBrowserHistoryDisabled
+      data: 0
+      type: dword
+  when:
+    - DTBC-0039
   tags:
-    - cat2
+    - cat 2
     - medium
+    - SRG-APP-000231
     - V-221581
+    - SV-221581r615937_rule
+    - DTBC-0039
     - patch
-
-- name: "MEDIUM | V-221584 | AUDIT | The version of Google Chrome running on the system must be a supported version."
-  command: true
-  register: result
-  always_run: yes
-  changed_when: no
-  ignore_errors: yes
-  tags:
-    - cat2
-    - medium
-    - V-221584
-    - audit
 
 - name: "MEDIUM | V-221584 | PATCH | The version of Google Chrome running on the system must be a supported version."
-  command: true
+  win_regedit:
+      path: HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome
+      value: SavingBrowserHistoryDisabled
+      data: 0
+      type: dword
+  when:
+    - DTBC-0050
   tags:
     - cat2
     - medium
+    - SRG-APP-000456
     - V-221584
+    - SV-221584r615937_rule
+    - DTBC-0050
     - patch
-
-- name: "MEDIUM | V-221586 | AUDIT | Deletion of browser history must be disabled."
-  command: true
-  register: result
-  always_run: yes
-  changed_when: no
-  ignore_errors: yes
-  tags:
-    - cat2
-    - medium
-    - V-221586
-    - audit
 
 - name: "MEDIUM | V-221586 | PATCH | Deletion of browser history must be disabled."
   command: true
   tags:
-    - cat2
+    - cat2 
     - medium
+    - SRG-APP-000089
     - V-221586
+    - SV-221586r615937_rule
+    - DTBC-0052
     - patch
-
-- name: "MEDIUM | V-221587 | AUDIT | Prompt for download location must be enabled."
-  command: true
-  register: result
-  always_run: yes
-  changed_when: no
-  ignore_errors: yes
-  tags:
-    - cat2
-    - medium
-    - V-221587
-    - audit
 
 - name: "MEDIUM | V-221587 | PATCH | Prompt for download location must be enabled."
   command: true
   tags:
     - cat2
     - medium
-    - V-221587
+    - SRG-APP-000089"
+    - V-221587"
+    - SV-221587r615937_rule"
+    - DTBC-0053"
     - patch
-
-- name: "MEDIUM | V-221588 | AUDIT | Download restrictions must be configured."
-  command: true
-  register: result
-  always_run: yes
-  changed_when: no
-  ignore_errors: yes
-  tags:
-    - cat2
-    - medium
-    - V-221588
-    - audit
 
 - name: "MEDIUM | V-221588 | PATCH | Download restrictions must be configured."
   command: true
   tags:
     - cat2
-    - medium
-    - V-221588
+    - medium"
+    - SRG-APP-000089"
+    - V-221588"
+    - SV-221588r615937_rule"
+    - DTBC-0055"
     - patch
-
-- name: "MEDIUM | V-221590 | AUDIT | Safe Browsing Extended Reporting must be disabled."
-  command: true
-  register: result
-  always_run: yes
-  changed_when: no
-  ignore_errors: yes
-  tags:
-    - cat2
-    - medium
-    - V-221590
-    - audit
 
 - name: "MEDIUM | V-221590 | PATCH | Safe Browsing Extended Reporting must be disabled."
   command: true
   tags:
     - cat2
-    - medium
-    - V-221590
+    - medium"
+    - SRG-APP-000206"
+    - V-221590"
+    - SV-221590r615937_rule"
+    - DTBC-0057"
     - patch
-
-- name: "MEDIUM | V-221591 | AUDIT | WebUSB must be disabled."
-  command: true
-  register: result
-  always_run: yes
-  changed_when: no
-  ignore_errors: yes
-  tags:
-    - cat2
-    - medium
-    - V-221591
-    - audit
 
 - name: "MEDIUM | V-221591 | PATCH | WebUSB must be disabled."
   command: true
   tags:
     - cat2
-    - medium
-    - V-221591
+    - medium"
+    - SRG-APP-000141"
+    - V-221591"
+    - SV-221591r615937_rule"
+    - DTBC-0058"
     - patch
-
-- name: "MEDIUM | V-221592 | AUDIT | Chrome Cleanup must be disabled."
-  command: true
-  register: result
-  always_run: yes
-  changed_when: no
-  ignore_errors: yes
-  tags:
-    - cat2
-    - medium
-    - V-221592
-    - audit
 
 - name: "MEDIUM | V-221592 | PATCH | Chrome Cleanup must be disabled."
   command: true
   tags:
     - cat2
-    - medium
-    - V-221592
+    - medium"
+    - SRG-APP-000089"
+    - V-221592"
+    - SV-221592r615937_rule"
+    - DTBC-0060"
     - patch
-
-- name: "MEDIUM | V-221593 | AUDIT | Chrome Cleanup reporting must be disabled."
-  command: true
-  register: result
-  always_run: yes
-  changed_when: no
-  ignore_errors: yes
-  tags:
-    - cat2
-    - medium
-    - V-221593
-    - audit
 
 - name: "MEDIUM | V-221593 | PATCH | Chrome Cleanup reporting must be disabled."
   command: true
   tags:
     - cat2
     - medium
+    - SRG-APP-000089
     - V-221593
+    - SV-221593r615937_rule
+    - DTBC-0061
     - patch
-
-- name: "MEDIUM | V-221594 | AUDIT | Google Cast must be disabled."
-  command: true
-  register: result
-  always_run: yes
-  changed_when: no
-  ignore_errors: yes
-  tags:
-    - cat2
-    - medium
-    - V-221594
-    - audit
 
 - name: "MEDIUM | V-221594 | PATCH | Google Cast must be disabled."
   command: true
   tags:
     - cat2
     - medium
+    - SRG-APP-000141
     - V-221594
+    - SV-221594r615937_rule
+    - DTBC-0063
     - patch
-
-- name: "MEDIUM | V-221595 | AUDIT | Autoplay must be disabled."
-  command: true
-  register: result
-  always_run: yes
-  changed_when: no
-  ignore_errors: yes
-  tags:
-    - cat2
-    - medium
-    - V-221595
-    - audit
 
 - name: "MEDIUM | V-221595 | PATCH | Autoplay must be disabled."
   command: true
   tags:
     - cat2
-    - medium
+    - medium"
+    - SRG-APP-000141
     - V-221595
+    - SV-221595r820911_rule
+    - DTBC-0064
     - patch
-
-- name: "MEDIUM | V-221596 | AUDIT | URLs must be allowlisted for Autoplay use."
-  command: true
-  register: result
-  always_run: yes
-  changed_when: no
-  ignore_errors: yes
-  tags:
-    - cat2
-    - medium
-    - V-221596
-    - audit
 
 - name: "MEDIUM | V-221596 | PATCH | URLs must be allowlisted for Autoplay use."
   command: true
   tags:
     - cat2
     - medium
+    - SRG-APP-000210
     - V-221596
+    - SV-221596r820742_rule
+    - DTBC-0065
     - patch
-
-- name: "MEDIUM | V-221597 | AUDIT | Anonymized data collection must be disabled."
-  command: true
-  register: result
-  always_run: yes
-  changed_when: no
-  ignore_errors: yes
-  tags:
-    - cat2
-    - medium
-    - V-221597
-    - audit
 
 - name: "MEDIUM | V-221597 | PATCH | Anonymized data collection must be disabled."
   command: true
   tags:
     - cat2
     - medium
+    - SRG-APP-000206
     - V-221597
+    - SV-221597r615937_rule
+    - DTBC-0066
     - patch
-
-- name: "MEDIUM | V-221598 | AUDIT | Collection of WebRTC event logs must be disabled."
-  command: true
-  register: result
-  always_run: yes
-  changed_when: no
-  ignore_errors: yes
-  tags:
-    - cat2
-    - medium
-    - V-221598
-    - audit
 
 - name: "MEDIUM | V-221598 | PATCH | Collection of WebRTC event logs must be disabled."
   command: true
   tags:
     - cat2
     - medium
+    - SRG-APP-000206
     - V-221598
+    - SV-221598r615937_rule
+    - DTBC-0067
     - patch
-
-- name: "MEDIUM | V-226401 | AUDIT | Guest Mode must be disabled."
-  command: true
-  register: result
-  always_run: yes
-  changed_when: no
-  ignore_errors: yes
-  tags:
-    - cat2
-    - medium
-    - V-226401
-    - audit
 
 - name: "MEDIUM | V-226401 | PATCH | Guest Mode must be disabled."
   command: true
   tags:
     - cat2
     - medium
+    - SRG-APP-000206
     - V-226401
+    - SV-226401r615937_rule
+    - DTBC-0069
     - patch
-
-- name: "MEDIUM | V-226402 | AUDIT | AutoFill for credit cards must be disabled."
-  command: true
-  register: result
-  always_run: yes
-  changed_when: no
-  ignore_errors: yes
-  tags:
-    - cat2
-    - medium
-    - V-226402
-    - audit
 
 - name: "MEDIUM | V-226402 | PATCH | AutoFill for credit cards must be disabled."
   command: true
   tags:
     - cat2
     - medium
+    - SRG-APP-000206
     - V-226402
+    - SV-226402r615937_rule
+    - DTBC-0070
     - patch
-
-- name: "MEDIUM | V-226403 | AUDIT | AutoFill for addresses must be disabled."
-  command: true
-  register: result
-  always_run: yes
-  changed_when: no
-  ignore_errors: yes
-  tags:
-    - cat2
-    - medium
-    - V-226403
-    - audit
 
 - name: "MEDIUM | V-226403 | PATCH | AutoFill for addresses must be disabled."
   command: true
   tags:
     - cat2
     - medium
+    - SRG-APP-000206
     - V-226403
+    - SV-226403r615937_rule
+    - DTBC-0071
     - patch
-
-- name: "MEDIUM | V-226404 | AUDIT | Import AutoFill form data must be disabled."
-  command: true
-  register: result
-  always_run: yes
-  changed_when: no
-  ignore_errors: yes
-  tags:
-    - cat2
-    - medium
-    - V-226404
-    - audit
 
 - name: "MEDIUM | V-226404 | PATCH | Import AutoFill form data must be disabled."
   command: true
   tags:
     - cat2
     - medium
+    - SRG-APP-000206
     - V-226404
+    - SV-226404r615937_rule
+    - DTBC-0072
     - patch
-
-- name: "MEDIUM | V-241787 | AUDIT | Web Bluetooth API must be disabled."
-  command: true
-  register: result
-  always_run: yes
-  changed_when: no
-  ignore_errors: yes
-  tags:
-    - cat2
-    - medium
-    - V-241787
-    - audit
 
 - name: "MEDIUM | V-241787 | PATCH | Web Bluetooth API must be disabled."
   command: true
   tags:
     - cat2
     - medium
+    - SRG-APP-000141
     - V-241787
+    - SV-241787r720329_rule
+    - DTBC-0073
     - patch
-
-- name: "MEDIUM | V-245538 | AUDIT | Use of the QUIC protocol must be disabled."
-  command: true
-  register: result
-  always_run: yes
-  changed_when: no
-  ignore_errors: yes
-  tags:
-    - cat2
-    - medium
-    - V-245538
-    - audit
 
 - name: "MEDIUM | V-245538 | PATCH | Use of the QUIC protocol must be disabled."
   command: true
   tags:
     - cat2
     - medium
+    - SRG-APP-000383
     - V-245538
+    - SV-245538r808524_rule
+    - DTBC-0074
     - patch
-
-- name: "MEDIUM | V-245539 | AUDIT | Session only based cookies must be disabled."
-  command: true
-  register: result
-  always_run: yes
-  changed_when: no
-  ignore_errors: yes
-  tags:
-    - cat2
-    - medium
-    - V-245539
-    - audit
 
 - name: "MEDIUM | V-245539 | PATCH | Session only based cookies must be disabled."
   command: true
   tags:
     - cat2
     - medium
+    - SRG-APP-000080
     - V-245539
+    - SV-245539r769360_rule
+    - DTBC-0045
     - patch
 
