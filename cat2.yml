@@ -340,13 +340,7 @@
     - patch
 
 - name: "MEDIUM | V-221584 | PATCH | The version of Google Chrome running on the system must be a supported version."
-  win_regedit:
-      path: HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome
-      value: SavingBrowserHistoryDisabled
-      data: 0
-      type: dword
-  when:
-    - DTBC-0050
+  command: true
   tags:
     - cat2
     - medium
