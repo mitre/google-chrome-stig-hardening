@@ -45,7 +45,6 @@ DTBC_0064: true
 DTBC_0065: true
 DTBC_0066: true
 DTBC_0067: true
-DTBC_0068: true
 DTBC_0069: true
 DTBC_0070: true
 DTBC_0071: true
@@ -53,6 +52,9 @@ DTBC_0072: true
 DTBC_0073: true
 DTBC_0074: true
 DTBC_0045: true
+
+# CAT 3 Rules
+DTBC-0068: true
 
 # Contains list of approved extension ids determined by administrators to decide which extensions should be allowed for their users
 google_chrome_approved_extension_ids: 1
