@@ -489,7 +489,7 @@
   win_regedit:
       path: HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome
       value: AutoplayAllowlist
-      data: google_chrome_approved_search_string
+      data: "{{ rhel7stig_gui }}"
       type: dword
   tags:
     - cat2
